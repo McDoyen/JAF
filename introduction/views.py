@@ -2,8 +2,11 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Question
 
 
 def index(request):
-    return HttpResponse("Introduction Page")
+    latest_question_list = Question.objects.order_by('question_index')[:6]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'introduction/index.html', context)
