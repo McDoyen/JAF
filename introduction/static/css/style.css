@@ -1,0 +1,49 @@
+.pagewrap {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  background-color: #819cb7;
+  border-radius: 5px;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  height: 15%;
+  margin-top: auto;
+  align-self: center;
+  margin-bottom: 1%;
+}
+
+body {
+  background: #74ebd5;
+  background: -webkit-linear-gradient(to bottom, #74ebd5, #acb6e5);
+  background: linear-gradient(to bottom, #74ebd5, #acb6e5);
+  line-height: 1.2;
+}
+
+input {
+  width: 100%;
+  padding: 1em;
+  border: 3px solid #fff;
+  border-radius: 2em;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+}
+
+.form_title {
+  text-transform: uppercase;
+  margin-left: 1em;
+}

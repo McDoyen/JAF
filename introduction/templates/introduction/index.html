@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+<body>
+  <div class="pagewrap">
+    <form class="form">
+      <h3 class="form_title">Personal Information</h3>
+      {% if latest_question_list %} {% for question in latest_question_list %}
+      <div class="container">
+        <label>{{question.question_text}}</label>
+        <input type="{{question.input_type}}" />
+      </div>
+      {% endfor %} {% else %}
+      <p>No questions</p>
+      {% endif %}
+    </form>
+  </div>
+</body>
