@@ -1,7 +1,6 @@
 .pagewrap {
   justify-content: center;
   display: flex;
-  height: 100vh;
   align-items: center;
 }
 
@@ -21,6 +20,7 @@
   height: 15%;
   margin-top: auto;
   align-self: center;
+  margin-bottom: 1%;
 }
 
 body {

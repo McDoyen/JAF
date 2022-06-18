@@ -7,6 +7,6 @@ from .models import Question
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('question_index')[:6]
+    latest_question_list = Question.objects.order_by('question_index')[:50]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'introduction/index.html', context)
