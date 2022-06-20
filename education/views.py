@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.http import HttpResponse
 
 from django.shortcuts import render
 
+from .models import TableColomn
+
 
 def index(request):
-    return HttpResponse('Education')
+    latest_colomn_list = TableColomn.objects.order_by('title_index')[:50]
+    context = {'latest_colomn_list': latest_colomn_list}
+    return render(request, 'education/index.html', context)
