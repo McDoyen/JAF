@@ -1,6 +1,22 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
-<script src=""></script>
+<script type="text/javascript">
+  function addRow() {
+    var querySet = "{{ input_type_query_set | safe }}";
+    var inputTypes = querySet
+      .replace(/[^a-z]/g, "")
+      .replace(/u/g, " ")
+      .trim()
+      .split(" ");
+    var table = document.getElementById("table");
+    var row = table.insertRow(-1);
+
+    inputTypes.map((type, index) => {
+      cell = row.insertCell(index);
+      cell.innerHTML = `<input type='${type}'/>`;
+    });
+  }
+</script>
 
 <body>
   <div class="pagewrap">
@@ -10,7 +26,7 @@
         Please fill in your Educational qualifications, beginning with the most
         recent
       </p>
-      <table>
+      <table id="table">
         {% if latest_colomn_list %}
         <tr class="table_title">
           {% for colomn in latest_colomn_list %}
@@ -26,7 +42,7 @@
         <p>Table unavailable</p>
         {%endif%}
       </table>
-      <div class="plus" onclick=""></div>
+      <div class="plus" onclick="addRow()"></div>
     </div>
   </div>
 </body>
