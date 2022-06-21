@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'reference.apps.ReferenceConfig',
     'work.apps.WorkConfig',
     'education.apps.EducationConfig',
     'introduction.apps.IntroductionConfig',
