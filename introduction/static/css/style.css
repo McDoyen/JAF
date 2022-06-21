@@ -76,3 +76,7 @@ table {
 .plus:hover {
   cursor: pointer;
 }
+
+.missing_table {
+  align-self: center;
+}

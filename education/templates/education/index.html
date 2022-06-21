@@ -23,11 +23,10 @@
     <div class="form">
       <h3 class="form_title">Academic Qualification</h3>
       <p class="sub_title">
-        Please fill in your Educational qualifications, beginning with the most
-        recent
+        Please fill in your work experience, beginning with the most recent
       </p>
+      {% if latest_colomn_list %}
       <table id="table">
-        {% if latest_colomn_list %}
         <tr class="table_title">
           {% for colomn in latest_colomn_list %}
           <td>{{colomn.title}}</td>
@@ -38,11 +37,11 @@
           <td><input type="{{colomn.input_type}}" /></td>
           {%endfor%}
         </tr>
-        {%else%}
-        <p>Table unavailable</p>
-        {%endif%}
       </table>
       <div class="plus" onclick="addRow()"></div>
+      {%else%}
+      <p class="missing_table">Table unavailable</p>
+      {%endif%}
     </div>
   </div>
 </body>
