@@ -48,6 +48,45 @@ table {
   margin: 1em;
 }
 
+button {
+  padding: 10px;
+  background: #819cb7;
+  border-radius: 1em;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+.buttons {
+  display: inline-flex;
+  position: relative;
+}
+
+.next_button {
+  position: absolute;
+  align-self: end;
+  right: 0;
+}
+
+.next_button:hover,
+.previous_button:hover,
+.initial_next_button:hover {
+  cursor: pointer;
+}
+
+.previous_button {
+  align-self: flex-start;
+}
+
+.initial_next_button {
+  width: fit-content;
+  align-self: end;
+}
+
+.next_button_link {
+  text-decoration: none;
+  color: black;
+}
+
 .form_title {
   text-transform: uppercase;
   margin-left: 2em;

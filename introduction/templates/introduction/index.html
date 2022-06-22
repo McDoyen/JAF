@@ -10,8 +10,11 @@
         <input type="{{question.input_type}}" />
       </div>
       {% endfor %} {% else %}
-      <p>No questions</p>
+      <p class="missing_table">No questions available</p>
       {% endif %}
+      <button class="initial_next_button">
+        <a class="next_button_link" href="{% url 'education' %}">NEXT</a>
+      </button>
     </form>
   </div>
 </body>

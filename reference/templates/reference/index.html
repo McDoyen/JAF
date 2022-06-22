@@ -37,6 +37,15 @@
         </tr>
       </table>
       <div class="plus" onclick="addRow()"></div>
+      <div class="buttons">
+        <button
+          class="previous_button"
+          onclick="window.location.href=`{% url 'work' %}`"
+        >
+          PREVIOUS
+        </button>
+        <button class="next_button">SUBMIT</button>
+      </div>
       {%else%}
       <p class="missing_table">Table unavailable</p>
       {%endif%}
