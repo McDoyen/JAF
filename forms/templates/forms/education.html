@@ -1,0 +1,48 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<script>
+  var querySet = "{{ input_type_query_set | safe }}";
+</script>
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+
+<body>
+  <div class="pagewrap">
+    <div class="form">
+      <h3 class="form_title">Academic Qualification</h3>
+      <p class="sub_title">
+        Please fill in your work experience, beginning with the most recent
+      </p>
+      {% if latest_colomn_list %}
+      <table id="table">
+        <tr class="table_title">
+          {% for colomn in latest_colomn_list %}
+          <td>{{colomn.title}}</td>
+          {%endfor%}
+        </tr>
+        <tr>
+          {% for colomn in latest_colomn_list %}
+          <td><input type="{{colomn.input_type}}" /></td>
+          {%endfor%}
+        </tr>
+      </table>
+      <div class="plus" onclick="addRow()"></div>
+      <div class="buttons">
+        <button
+          class="previous_button"
+          onclick="window.location.href=`{% url 'index' %}`"
+        >
+          PREVIOUS
+        </button>
+        <button
+          class="next_button"
+          onclick="window.location.href=`{% url 'work' %}`"
+        >
+          NEXT
+        </button>
+      </div>
+      {%else%}
+      <p class="missing_table">Table unavailable</p>
+      {%endif%}
+    </div>
+  </div>
+</body>
