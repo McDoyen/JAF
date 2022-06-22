@@ -3,12 +3,12 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+INPUT_TYPES = (('text', 'text'), ('date', 'date'))
+
 
 class PersonalInformation(models.Model):
-    INPUT_TYPES = (
-        ('date', 'date'), ('email', 'email'), ('file', 'file'), ('image',
-                                                                 'image'), ('number', 'number'), ('tel', 'tel'), ('text', 'text')
-    )
+    INPUT_TYPES = (('text', 'text'), ('date', 'date'), ('email', 'email'),
+                   ('file', 'file'), ('image', 'image'), ('number', 'number'), ('tel', 'tel'))
     question_text = models.CharField(max_length=200)
     question_index = models.IntegerField(default=0)
     input_type = models.CharField(
@@ -19,8 +19,6 @@ class PersonalInformation(models.Model):
 
 
 class AcademicQualification(models.Model):
-    INPUT_TYPES = (('date', 'date'), ('text', 'text'))
-
     title = models.CharField(max_length=200)
     title_index = models.IntegerField(default=0)
     input_type = models.CharField(
@@ -31,8 +29,6 @@ class AcademicQualification(models.Model):
 
 
 class WorkingExperience(models.Model):
-    INPUT_TYPES = (('text', 'text'), ('date', 'date'))
-
     title = models.CharField(max_length=200)
     title_index = models.IntegerField(default=0)
     input_type = models.CharField(
@@ -43,8 +39,7 @@ class WorkingExperience(models.Model):
 
 
 class Reference(models.Model):
-    INPUT_TYPES = (('tel', 'tel'),
-                   ('text', 'text'), ('email', 'email'))
+    INPUT_TYPES = (('text', 'text'), ('tel', 'tel'), ('email', 'email'))
 
     title = models.CharField(max_length=200)
     title_index = models.IntegerField(default=0)
