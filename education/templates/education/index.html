@@ -40,8 +40,18 @@
       </table>
       <div class="plus" onclick="addRow()"></div>
       <div class="buttons">
-        <button class="previous_button">PREVIOUS</button>
-        <button class="next_button">NEXT</button>
+        <button
+          class="previous_button"
+          onclick="window.location.href=`{% url 'introduction' %}`"
+        >
+          PREVIOUS
+        </button>
+        <button
+          class="next_button"
+          onclick="window.location.href=`{% url 'work' %}`"
+        >
+          NEXT
+        </button>
       </div>
       {%else%}
       <p class="missing_table">Table unavailable</p>

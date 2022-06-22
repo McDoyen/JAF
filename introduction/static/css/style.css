@@ -82,6 +82,11 @@ button {
   align-self: end;
 }
 
+.next_button_link {
+  text-decoration: none;
+  color: black;
+}
+
 .form_title {
   text-transform: uppercase;
   margin-left: 2em;

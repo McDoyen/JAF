@@ -38,7 +38,12 @@
       </table>
       <div class="plus" onclick="addRow()"></div>
       <div class="buttons">
-        <button class="previous_button">PREVIOUS</button>
+        <button
+          class="previous_button"
+          onclick="window.location.href=`{% url 'work' %}`"
+        >
+          PREVIOUS
+        </button>
         <button class="next_button">SUBMIT</button>
       </div>
       {%else%}
