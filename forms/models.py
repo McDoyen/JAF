@@ -3,12 +3,13 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-INPUT_TYPES = (('text', 'text'), ('date', 'date'))
+INPUT_TYPES = (('text', 'text'), ('date', 'date'), ('month', 'month'))
 
 
 class PersonalInformation(models.Model):
-    INPUT_TYPES = (('text', 'text'), ('date', 'date'), ('email', 'email'),
+    INPUT_TYPES = (('text', 'text'), ('date', 'date'), ('month', 'month'), ('email', 'email'),
                    ('file', 'file'), ('image', 'image'), ('number', 'number'), ('tel', 'tel'))
+
     question_text = models.CharField(max_length=200)
     question_index = models.IntegerField(default=0)
     input_type = models.CharField(
