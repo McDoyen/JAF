@@ -1,10 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.introduction, name='index'),
-    url(r'^education/$', views.education, name='education'),
-    url(r'^work/$', views.work, name='work'),
-    url(r'^reference/$', views.reference, name='reference'),
+    path('', views.introduction, name='index'),
+    path('education/', views.education, name='education'),
+    path('work/', views.work, name='work'),
+    path('reference/', views.reference, name='reference'),
 ]
