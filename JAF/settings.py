@@ -23,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'jd-l1f82phpxbkz=20$0_6i4c8ll&!803=zw-0wo41l1z2gzcu'
-SECRET_KEY = os.environ.get(
-    'SECRET_KEY', 'compromised-jd-l1f82phpxbkz=20$0_6i4c8ll&!803=zw-0wo41l1z2gzcu')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
