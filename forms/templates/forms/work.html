@@ -27,6 +27,9 @@
         </tr>
       </table>
       <div class="plus" onclick="addRow()"></div>
+      {%else%}
+      <p class="missing_table">Table unavailable</p>
+      {%endif%}
       <div class="buttons">
         <button
           class="previous_button"
@@ -41,9 +44,6 @@
           NEXT
         </button>
       </div>
-      {%else%}
-      <p class="missing_table">Table unavailable</p>
-      {%endif%}
     </div>
   </div>
 </body>

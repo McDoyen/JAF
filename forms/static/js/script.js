@@ -1,9 +1,5 @@
 function addRow() {
-    var inputTypes = querySet
-        .replace(/[^a-z]/g, "")
-        .replace(/u/g, " ")
-        .trim()
-        .split(" ");
+    var inputTypes = querySet.replace(/['\[\],]/g, '').split(' ')
     var table = document.getElementById("table");
     var row = table.insertRow(-1);
 
