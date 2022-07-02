@@ -1,20 +1,33 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
-<body>
-  <div class="pagewrap">
-    <form class="form">
-      <h3 class="form_title">Personal Information</h3>
-      {% if latest_question_list %} {% for question in latest_question_list %}
-      <div class="container">
-        <label>{{question.question_text}}</label>
-        <input type="{{question.input_type}}" />
-      </div>
-      {% endfor %} {% else %}
-      <p class="missing_table">No questions available</p>
-      {% endif %}
-      <button class="initial_next_button">
-        <a class="next_button_link" href="{% url 'education' %}">NEXT</a>
-      </button>
-    </form>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Information</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <div class="d-flex justify-content-center">
+      <form class="w-75 form position-relative">
+        <h3>PERSONAL INFORMATION</h3>
+        {% if latest_question_list %} {% for question in latest_question_list %}
+        <label class="form-label fw-bold">{{question.question_text}}</label>
+        <div class="input-group-lg">
+          <input type="{{question.input_type}}" class="form-control" />
+        </div>
+        {% endfor %} {% else %}
+        <p class="align-self-center">No questions available</p>
+        {% endif %}
+        <a
+          class="btn btn-outline-dark mt-2 position-absolute end-0"
+          href="{% url 'education' %}"
+          >NEXT</a
+        >
+      </form>
+    </div>
+  </body>
+</html>
