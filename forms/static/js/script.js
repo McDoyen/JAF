@@ -5,6 +5,6 @@ function addRow() {
 
     inputTypes.map((type, index) => {
         cell = row.insertCell(index);
-        cell.innerHTML = `<input type='${type}'/>`;
+        cell.innerHTML = `<div class="input-group-lg"><input type='${type}' class="form-control"/></div>`;
     });
 }
