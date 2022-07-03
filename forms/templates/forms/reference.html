@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <script>
       var querySet = "{{ input_type_query_set | safe }}";
+      var columnTitle = "{{ title_query_set | safe}}";
     </script>
     <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
@@ -20,18 +21,18 @@
       <div class="d-flex w-75 flex-wrap flex-column form">
         <h3 class="lh-lg">REFERENCE</h3>
         <p class="m-3">Professional & Character Referees</p>
-        {% if latest_colomn_list %}
-        <table id="table">
+        {% if latest_column_list %}
+        <table id="table" class="table table-bordered">
           <tbody>
             <tr>
-              {% for colomn in latest_colomn_list %}
+              {% for column in latest_column_list %}
               <td>
                 <div class="input-group-lg">
                   <input
                     type="text"
-                    onfocus="(this.type='{{colomn.input_type}}')"
+                    onfocus="(this.type='{{column.input_type}}')"
                     class="form-control"
-                    placeholder="{{colomn.title}}"
+                    placeholder="{{column.title}}"
                   />
                 </div>
               </td>

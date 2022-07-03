@@ -24,18 +24,18 @@
           Please fill in your academic qualifications, beginning with the most
           recent
         </p>
-        {% if latest_colomn_list %}
-        <table id="table">
+        {% if latest_column_list %}
+        <table id="table" class="table table-bordered">
           <tbody>
             <tr>
-              {% for colomn in latest_colomn_list %}
+              {% for column in latest_column_list %}
               <td>
                 <div class="input-group-lg">
                   <input
                     type="text"
-                    onfocus="(this.type='{{colomn.input_type}}')"
+                    onfocus="(this.type='{{column.input_type}}')"
                     class="form-control"
-                    placeholder="{{colomn.title}}"
+                    placeholder="{{column.title}}"
                   />
                 </div>
               </td>

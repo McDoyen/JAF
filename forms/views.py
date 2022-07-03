@@ -22,7 +22,7 @@ def titleQuerySet(model):
 
 
 def context(model):
-    return {'latest_colomn_list': list(
+    return {'latest_column_list': list(
         getQuerySet(model, 'title_index')), 'input_type_query_set': list(inputTypeQuerySet(model)), 'title_query_set': list(titleQuerySet(model))}
 
 
