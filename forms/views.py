@@ -17,9 +17,13 @@ def inputTypeQuerySet(model):
     return model.objects.values_list('input_type', flat=True)
 
 
+def titleQuerySet(model):
+    return model.objects.values_list('title', flat=True)
+
+
 def context(model):
     return {'latest_colomn_list': list(
-        getQuerySet(model, 'title_index')), "input_type_query_set": list(inputTypeQuerySet(model))}
+        getQuerySet(model, 'title_index')), 'input_type_query_set': list(inputTypeQuerySet(model)), 'title_query_set': list(titleQuerySet(model))}
 
 
 def introduction(request):
