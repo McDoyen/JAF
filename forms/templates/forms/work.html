@@ -18,7 +18,7 @@
   <body>
     <div class="d-flex justify-content-center">
       <div class="d-flex w-75 flex-wrap flex-column form">
-        <h3>RELEVANT WORKING EXPERIENCE</h3>
+        <h3 class="lh-lg">RELEVANT WORKING EXPERIENCE</h3>
         <p class="m-3">
           Please fill in your work experience, beginning with the most recent
         </p>
@@ -38,7 +38,12 @@
               {% for colomn in latest_colomn_list %}
               <td>
                 <div class="input-group-lg">
-                  <input type="{{colomn.input_type}}" class="form-control" />
+                  <input
+                    type="text"
+                    onfocus="(this.type='{{colomn.input_type}}')"
+                    class="form-control"
+                    placeholder="{{colomn.title}}"
+                  />
                 </div>
               </td>
               {%endfor%}
@@ -49,6 +54,7 @@
           class="fa-solid fa-plus mt-3 align-self-center"
           role="button"
           onclick="addRow()"
+          title="Add"
         ></svg>
         {%else%}
         <p class="align-self-center">Table unavailable</p>
