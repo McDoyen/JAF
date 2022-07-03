@@ -16,28 +16,34 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Question',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('question_text', models.CharField(max_length=200)),
                 ('question_index', models.IntegerField(default=0)),
-                ('input_type', models.CharField(choices=[('date', 'date'), ('email', 'email'), ('file', 'file'), ('image', 'image'), ('number', 'number'), ('tel', 'tel'), ('text', 'text')], default='text', max_length=6)),
+                ('input_type', models.CharField(choices=[('date', 'date'), ('email', 'email'), ('file', 'file'), (
+                    'image', 'image'), ('number', 'number'), ('tel', 'tel'), ('text', 'text')], default='text', max_length=6)),
             ],
         ),
         migrations.CreateModel(
             name='TableColomn',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
                 ('title_index', models.IntegerField(default=0)),
-                ('input_type', models.CharField(choices=[('date', 'date'), ('text', 'text')], default='text', max_length=6)),
+                ('input_type', models.CharField(choices=[
+                 ('date', 'date'), ('text', 'text')], default='text', max_length=6)),
             ],
         ),
         migrations.CreateModel(
             name='TableColomnExtended',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
                 ('title_index', models.IntegerField(default=0)),
-                ('input_type', models.CharField(choices=[('tel', 'tel'), ('text', 'text'), ('email', 'email')], default='text', max_length=6)),
+                ('input_type', models.CharField(choices=[
+                 ('tel', 'tel'), ('text', 'text'), ('email', 'email')], default='text', max_length=6)),
             ],
         ),
     ]
