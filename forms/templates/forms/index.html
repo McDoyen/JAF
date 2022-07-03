@@ -15,9 +15,16 @@
       <form class="w-75 form position-relative">
         <h3 class="lh-lg">PERSONAL INFORMATION</h3>
         {% if latest_question_list %} {% for question in latest_question_list %}
-        <label class="form-label fw-bold">{{question.question_text}}</label>
-        <div class="input-group-lg">
-          <input type="{{question.input_type}}" class="form-control" />
+        <div class="form-outline">
+          <label class="form-label fw-bold" for="{{question.question_text}}"
+            >{{question.question_text}}</label
+          >
+          <input
+            type="{{question.input_type}}"
+            id="{{question.question_text}}"
+            class="form-control form-control-lg"
+            required
+          />
         </div>
         {% endfor %} {% else %}
         <p class="align-self-center">No questions available</p>
